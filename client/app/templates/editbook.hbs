@@ -1,0 +1,10 @@
+<br>new book<br>
+{{input value=model.name}}
+<br>
+
+
+
+   {{view "select" 
+   content=users optionValuePath="content" optionLabelPath="content.name" value=selectedowner}}
+    <p>{{selectedowner}}</p>
+<button {{action  'save'}}>save</button>
