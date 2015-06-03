@@ -1,0 +1,9 @@
+<br>
+
+<br>
+{{#each book in model}}
+name {{book.name}}<br>
+belongs to: {{book.owner.name}}
+<br>
+{{/each}}
+{{outlet}}
