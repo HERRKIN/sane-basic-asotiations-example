@@ -1,8 +1,11 @@
 <br>
-users
 
+users
+{{#link-to 'newuser'}}New User{{/link-to}}
 <br>
 {{#each model}}
 name {{name}}<br>
+{{#link-to  'edituser' this}} edit{{/link-to}}
+<br>
 {{/each}}
 {{outlet}}

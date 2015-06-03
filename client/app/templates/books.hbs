@@ -1,9 +1,10 @@
 <br>
-
+{{#link-to 'newbook'}}New book{{/link-to}}
 <br>
 {{#each book in model}}
 name {{book.name}}<br>
 belongs to: {{book.owner.name}}
-<br>
+{{#link-to  'editbook' book}}edit {{/link-to}}
+<br><br>
 {{/each}}
 {{outlet}}
