@@ -7,5 +7,12 @@ users
 name {{name}}<br>
 {{#link-to  'edituser' this}} edit{{/link-to}}
 <br>
+books 
+{{#each book in books}}
+<br>
+{{book.name}}
+<br>
+{{/each}}
+<br><br>
 {{/each}}
 {{outlet}}

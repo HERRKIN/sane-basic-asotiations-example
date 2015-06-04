@@ -1,10 +1,19 @@
 <br>new book<br>
 {{input value=model.name}}
 <br>
+{{#if controller.users.isFulfilled}}
 
+   {{view "select"    content=users optionValuePath="content" optionLabelPath="content.name" selection=selectedowner}}
 
+{{else}}loading users{{/if}}
+{{!-- {{model.owner.name}} --}}
+{{!-- {{selectedowner}} --}}
+    <p>{{selectedowner.name}}</p>
 
-   {{view "select" 
-   content=users optionValuePath="content" optionLabelPath="content.name" value=selectedowner}}
-    <p>{{selectedowner}}</p>
+{{!-- <select value={{selectedowner}}>
+	{{#each item in users}}
+	  <option value={{item}} selected ={{selectedowner}}>{{item.name}}</option>
+	{{/each}}
+</select> --}}
+
 <button {{action  'save'}}>save</button>
