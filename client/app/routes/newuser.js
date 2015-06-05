@@ -6,13 +6,13 @@ export default Ember.Route.extend({
 	},
 	actions:{
 		save: function (){
-			var _this = this
+			var _this = this;
 			 //var m = this.currentModel;
-			 var m = this.modelFor('newuser')
-			 console.log(m.get('name'));
+			 var m = this.modelFor('newuser');
+			
 			 m.save()
 			 .then(function  () {
-			 	_this.transitionTo('users')
+			 	_this.transitionTo('users');
 			 })
 		}
 	}

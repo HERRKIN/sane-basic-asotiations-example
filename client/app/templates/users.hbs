@@ -3,16 +3,19 @@
 users
 {{#link-to 'newuser'}}New User{{/link-to}}
 <br>
+
 {{#each model}}
-name {{name}}<br>
-{{#link-to  'edituser' this}} edit{{/link-to}}
+<b>name:</b> {{name}}<br>
+{{#if books}}
+<b>books:</b> 
 <br>
-books 
 {{#each book in books}}
-<br>
-{{book.name}}
+- {{book.name}}
 <br>
 {{/each}}
+{{/if}}
+{{#link-to  'edituser' this}} edit{{/link-to}}
+<a href="#" {{ action "deleteuser" this }}>delete</a>
 <br><br>
 {{/each}}
 {{outlet}}

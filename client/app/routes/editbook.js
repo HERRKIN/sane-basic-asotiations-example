@@ -6,9 +6,8 @@ export default Ember.Route.extend({
 		return this.store.find('book',params.book_id);//este no es necesario, ember lo asume
 	},
 	setupController: function  (controller,model) {
-		this._super(controller,model);
-		//hcontroller.set('model',model)
-		// controller.set('selectedowner',model.get('owner'))
+		//this._super(controller,model);
+		controller.set('model', model);
 		controller.set('users', this.store.find('user'));
 		this.controllerFor(this.routeName).set('selectedowner',model.get('owner'));
 	},
@@ -19,13 +18,13 @@ export default Ember.Route.extend({
 			 var m = this.currentModel;
 			// var m = this.modelFor('newbook')
 			 //console.log(m.get('owner').get('name'))
-			 //var selected = this.controllerFor(this.routeName).get('selectedowner')
+			 var selected = this.controllerFor(this.routeName).get('selectedowner')
 
 
 
 
-			 //console.log(selected)
-			 //m.set('owner',selected)
+			 console.log(selected)
+			 m.set('owner',selected)
 			 console.log(m.get('name'));
 			  m.save()
 			 .then(function  () {
